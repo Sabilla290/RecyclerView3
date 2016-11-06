@@ -7,9 +7,9 @@
 ![GitHub Logo](3.5.png)
 ![GitHub Logo](3.6.png)
 
-Identitas 
-Nama : Sinta Ayu Sabilla
-Kelas : XIIRPL5
-No. Absen : 35
-NIS : 4446/1344-070
-Sekolah : SMK Telkom Malang
+- Identitas 
+- Nama : Sinta Ayu Sabilla
+- Kelas : XIIRPL5
+- No. Absen : 35
+- NIS : 4446/1344-070
+- Sekolah : SMK Telkom Malang
