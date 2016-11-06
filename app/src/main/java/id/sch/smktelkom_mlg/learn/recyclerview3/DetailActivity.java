@@ -16,9 +16,6 @@ import id.sch.smktelkom_mlg.learn.recyclerview3.model.Hotel;
 
 public class DetailActivity extends AppCompatActivity {
 
-
-    public  String HOTEL;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,15 +23,17 @@ public class DetailActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                onBackPressed();
-            }
-        });
+
+        Hotel hotel = (Hotel) getIntent().getSerializableExtra(MainActivity.HOTEL);
+        setTitle(hotel.judul);
+        ImageView ivFoto = (ImageView) findViewById(R.id.imageFoto);
+        ivFoto.setImageURI(Uri.parse(hotel.foto));
+
+
+        TextView tvDeskripsi = (TextView) findViewById(R.id.place_detail);
+        tvDeskripsi.setText(hotel.deskripsi + "\n\n" + hotel.detail);
+        TextView tvLokasi = (TextView) findViewById(R.id.place_location);
+        tvLokasi.setText(hotel.lokasi);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -44,15 +43,12 @@ public class DetailActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-        Hotel hotel = (Hotel) getIntent().getSerializableExtra(HOTEL);
-        setTitle(hotel.judul);
-        ImageView ivFoto = (ImageView) findViewById(R.id.imageFoto);
-        ivFoto.setImageURI(Uri.parse(hotel.foto));
-
-        TextView tvDeskripsi = (TextView) findViewById(R.id.place_detail);
-        tvDeskripsi.setText(hotel.deskripsi+"\n\n"+hotel.detail);
-        TextView tvLokasi = (TextView) findViewById(R.id.place_location);
-        tvLokasi.setText(hotel.lokasi);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 }

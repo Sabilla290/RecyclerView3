@@ -12,5 +12,6 @@
     android:scrollbars="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main"
-    tools:context="id.sch.smktelkom_mlg.learn.recyclerview3.MainActivity"/>
+    tools:context="id.sch.smktelkom_mlg.learn.recyclerview3.MainActivity">
 
+</android.support.v7.widget.RecyclerView>
